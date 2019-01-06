@@ -2,15 +2,13 @@
 # Old Maintainer: onestone at gmail dot com
 # 2019-01-05 Updated for customized font (downloaded) before install
 
-pkgname=ttf-input-custom
+pkgname=ttf-input
 pkgver=20170404
 pkgrel=1
 pkgdesc='Fonts for Code, from Font Bureau. Updated for customized font (downloaded).'
 arch=('any')
 url='http://input.fontbureau.com/'
 license=('custom:Font Software License Agreement')
-provides=('ttf-input')
-conflicts=('ttf-input')
 depends=('fontconfig' 'xorg-fonts-encodings' 'xorg-font-utils')
 # url_long="${url}build/?fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&asterisk=0&braces=0&preset=default&line-height=1.2&accept=I+do&email="
 source=("Input-Font.zip")
