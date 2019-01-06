@@ -1,0 +1,27 @@
+# Maintainer: javier dot tia at gmail dot com
+# Old Maintainer: onestone at gmail dot com
+# 2019-01-05 Updated for customized font (downloaded) before install
+
+pkgname=ttf-input-custom
+pkgver=20170404
+pkgrel=1
+pkgdesc='Fonts for Code, from Font Bureau. Updated for customized font (downloaded).'
+arch=('any')
+url='http://input.fontbureau.com/'
+license=('custom:Font Software License Agreement')
+provides=('ttf-input')
+conflicts=('ttf-input')
+depends=('fontconfig' 'xorg-fonts-encodings' 'xorg-font-utils')
+# url_long="${url}build/?fontSelection=whole&a=0&g=0&i=0&l=0&zero=0&asterisk=0&braces=0&preset=default&line-height=1.2&accept=I+do&email="
+source=("Input-Font.zip")
+sha256sums=('0b2b9993153983038a94f109bba0b6f092113ce62fd13219fe4841258858a164')
+
+package() {
+  mkdir -p ${pkgdir}/usr/share/fonts/TTF
+  find ${srcdir}/Input_Fonts -name '*.ttf' \
+    -exec cp {} ${pkgdir}/usr/share/fonts/TTF \;
+  chmod 644 ${pkgdir}/usr/share/fonts/TTF/*
+
+  mkdir -p ${pkgdir}/usr/share/licenses/${pkgname}
+  cp ${srcdir}/LICENSE.txt ${pkgdir}/usr/share/licenses/${pkgname}
+}
